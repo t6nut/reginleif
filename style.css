@@ -68,8 +68,8 @@ h1 span {
   }
 }
 .brauni {
-  width: 300px;
-  height: 260px;
+  width: 30vh;
+  height: 26vh;
   position: absolute;
   left: 0;
   top: 0;
@@ -80,7 +80,7 @@ h1 span {
     left: 0;
   }
   to {
-    left: calc(100vw - 300px);
+    left: calc(100vw - 30vh);
   }
 }
 @keyframes moveY {
@@ -88,6 +88,6 @@ h1 span {
     top: 0;
   }
   to {
-    top: calc(100vh - 260px);
+    top: calc(100vh - 26vh);
   }
 }
