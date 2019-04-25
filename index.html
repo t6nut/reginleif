@@ -5,15 +5,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/typeit@6.0.2/dist/typeit.min.js"></script>
   <title>Reginleif</title>
 </head>
 <body>
   <div class="star">
-    <img class="brauni" src="assets/brauni.png" alt="brauni">
-    <h1>
-      <span>R</span><span>e</span><span>g</span><span>i</span><span>n</span><span>l</span><span>e</span><span>i</span><span>f</span>
-      <span>P</span><span>e</span><span>г</span><span>и</span><span>н</span><span>л</span><span>e</span><span>и</span><span>ф</span>
-    </h1>
+    <!--<img class="brauni" src="assets/brauni.png" alt="brauni">-->
+    <h1></h1>
+    <!--<span>R</span>eginleif
+    <span>R</span><span>e</span><span>g</span><span>i</span><span>n</span><span>l</span><span>e</span><span>i</span><span>f</span>
+    <span>P</span><span>e</span><span>г</span><span>и</span><span>н</span><span>л</span><span>e</span><span>и</span><span>ф</span>-->
+    <div class="categories">
+      <h2><span>A</span>rt</h2>
+      <h2><span>P</span>hoto</h2>
+      <h2><span>P</span>oetry</h2>
+      <h2><span>F</span>ilm</h2>
+      <h2><span>D</span>esign</h2>
+    </div>
   </div>
+  <script>
+    const instance = new TypeIt('h1', {
+      strings: ['Reginleif', 'Peгинлeиф'],
+      speed: 250,
+      loop: true,
+      breakLines: false,
+      waitUntilVisible: true
+    }).go();
+  </script>
 </body>
 </html>

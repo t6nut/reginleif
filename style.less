@@ -23,6 +23,10 @@ font-family: 'Pacifico', cursive;
 font-family: 'Dancing Script', cursive;
 */
 @blue: #001AFF;
+@text-shadow: 20px 20px 5px black;
+html {
+  cursor: url(assets/brauni-cursor.png), auto;
+}
 body {
   overflow: hidden;
   background: @blue url(assets/brauni.png);
@@ -39,11 +43,111 @@ body {
   width: 100%;
 }
 h1 {
+  text-align: center;
   font-size: 72px;
   font-weight: 100;
-  span {
-    display: inline-flex;
-    animation: turn 3s infinite;
+  text-shadow: @text-shadow;
+}
+h2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 5px;
+  width: 150px;
+  height: 130px;
+  text-align: center;
+  background: url(assets/brauni.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  font-size: 48px;
+  font-weight: 100;
+  //text-shadow: @text-shadow;
+  animation: moveXart 5.05s linear 0s infinite alternate, moveYart 5.4s linear 0s infinite alternate; //,turn 2s linear infinite;
+  &:nth-last-of-type(1) {
+    animation-delay: 1s;
+  }
+  &:nth-last-of-type(2) {
+    animation: moveX 4.05s linear 0s infinite alternate, moveY 4.4s linear 0s infinite alternate;
+    animation-delay: 2s;
+  }
+  &:nth-last-of-type(3) {
+    animation-delay: 3s;
+  }
+  &:nth-last-of-type(4) {
+    animation: moveX 4.05s linear 0s infinite alternate, moveY 4.4s linear 0s infinite alternate;
+    animation-delay: 4s;
+  }
+  &:nth-last-of-type(5) {
+    animation-delay: 5s;
+  }
+  &:hover {
+    animation-play-state: paused;
+  }
+}
+span {
+  display: inline-flex;
+  //animation: turn 2s infinite;
+}
+.star {
+
+}
+.categories {
+  display: flex;
+}
+@brauniW: 120px;
+@brauniH: 60px;
+.brauni {
+  width: @brauniW;
+  height: @brauniH;
+  position: absolute;
+  left: 0;
+  top: 0;
+  animation: moveX 3.05s linear 0s infinite alternate, moveY 3.4s linear 0s infinite alternate;
+}
+
+/* Animations */
+@keyframes moveX {
+  from {
+    left: 0;
+    position: absolute;
+  } to {
+    position: absolute;
+    left: ~"calc(100vw - @{brauniW})";
+  }
+}
+@keyframes moveY {
+  from {
+    position: absolute;
+    top: 0;
+  } to {
+    position: absolute;
+    top: ~"calc(100vh - @{brauniH})";
+  }
+}
+@keyframes moveXart {
+  from {
+    position: absolute;
+    right: 0;
+  } to {
+    position: absolute;
+    right: ~"calc(100vw - 120px)";
+  }
+}
+@keyframes moveYart {
+  from {
+    position: absolute;
+    top: 0;
+  } to {
+    position: absolute;
+    top: ~"calc(100vh - 60px)";
+  }
+}
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }
 @keyframes turn {
@@ -59,31 +163,4 @@ h1 {
     transform: rotate(0deg);
     transform: scaleX(-1);
   }
-}
-@keyframes rotate {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-.star {
-
-}
-@brauniW: 30vh;
-@brauniH: 26vh;
-.brauni {
-  width: @brauniW;
-  height: @brauniH;
-  position: absolute;
-  left: 0;
-  top: 0;
-  animation: moveX 3.05s linear 0s infinite alternate, moveY 3.4s linear 0s infinite alternate;
-}
-@keyframes moveX {
-  from { left: 0; } to { left: ~"calc(100vw - @{brauniW})"; }
-}
-@keyframes moveY {
-  from { top: 0; } to { top: ~"calc(100vh - @{brauniH})"; }
 }

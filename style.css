@@ -22,13 +22,22 @@ font-family: 'Indie Flower', cursive;
 font-family: 'Pacifico', cursive;
 font-family: 'Dancing Script', cursive;
 */
+html {
+  cursor: url(assets/brauni-cursor.png), auto;
+}
 body {
   overflow: hidden;
   background: #001aff url(assets/brauni.png);
   background-size: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin: 0;
   padding: 0;
   font-family: 'Roboto', sans-serif;
@@ -38,56 +47,218 @@ body {
   width: 100%;
 }
 h1 {
+  text-align: center;
   font-size: 72px;
   font-weight: 100;
+  text-shadow: 20px 20px 5px #000000;
 }
-h1 span {
+h2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 5px;
+  width: 150px;
+  height: 130px;
+  text-align: center;
+  background: url(assets/brauni.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  font-size: 48px;
+  font-weight: 100;
+  -webkit-animation: moveXart 5.05s linear 0s infinite alternate, moveYart 5.4s linear 0s infinite alternate;
+          animation: moveXart 5.05s linear 0s infinite alternate, moveYart 5.4s linear 0s infinite alternate;
+}
+h2:nth-last-of-type(1) {
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+h2:nth-last-of-type(2) {
+  -webkit-animation: moveX 4.05s linear 0s infinite alternate, moveY 4.4s linear 0s infinite alternate;
+          animation: moveX 4.05s linear 0s infinite alternate, moveY 4.4s linear 0s infinite alternate;
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+}
+h2:nth-last-of-type(3) {
+  -webkit-animation-delay: 3s;
+          animation-delay: 3s;
+}
+h2:nth-last-of-type(4) {
+  -webkit-animation: moveX 4.05s linear 0s infinite alternate, moveY 4.4s linear 0s infinite alternate;
+          animation: moveX 4.05s linear 0s infinite alternate, moveY 4.4s linear 0s infinite alternate;
+  -webkit-animation-delay: 4s;
+          animation-delay: 4s;
+}
+h2:nth-last-of-type(5) {
+  -webkit-animation-delay: 5s;
+          animation-delay: 5s;
+}
+h2:hover {
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+}
+span {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
-  animation: turn 3s infinite;
 }
-@keyframes turn {
-  0% {
-    transform: rotate(0deg);
-    transform: scaleX(-1);
-  }
-  50% {
-    transform: rotate(360deg);
-    transform: scaleX(1);
-  }
-  100% {
-    transform: rotate(0deg);
-    transform: scaleX(-1);
-  }
-}
-@keyframes rotate {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.categories {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 .brauni {
-  width: 30vh;
-  height: 26vh;
+  width: 120px;
+  height: 60px;
   position: absolute;
   left: 0;
   top: 0;
-  animation: moveX 3.05s linear 0s infinite alternate, moveY 3.4s linear 0s infinite alternate;
+  -webkit-animation: moveX 3.05s linear 0s infinite alternate, moveY 3.4s linear 0s infinite alternate;
+          animation: moveX 3.05s linear 0s infinite alternate, moveY 3.4s linear 0s infinite alternate;
+}
+/* Animations */
+@-webkit-keyframes moveX {
+  from {
+    left: 0;
+    position: absolute;
+  }
+  to {
+    position: absolute;
+    left: calc(100vw - 120px);
+  }
 }
 @keyframes moveX {
   from {
     left: 0;
+    position: absolute;
   }
   to {
-    left: calc(100vw - 30vh);
+    position: absolute;
+    left: calc(100vw - 120px);
+  }
+}
+@-webkit-keyframes moveY {
+  from {
+    position: absolute;
+    top: 0;
+  }
+  to {
+    position: absolute;
+    top: calc(100vh - 60px);
   }
 }
 @keyframes moveY {
   from {
+    position: absolute;
     top: 0;
   }
   to {
-    top: calc(100vh - 26vh);
+    position: absolute;
+    top: calc(100vh - 60px);
+  }
+}
+@-webkit-keyframes moveXart {
+  from {
+    position: absolute;
+    right: 0;
+  }
+  to {
+    position: absolute;
+    right: calc(100vw - 120px);
+  }
+}
+@keyframes moveXart {
+  from {
+    position: absolute;
+    right: 0;
+  }
+  to {
+    position: absolute;
+    right: calc(100vw - 120px);
+  }
+}
+@-webkit-keyframes moveYart {
+  from {
+    position: absolute;
+    top: 0;
+  }
+  to {
+    position: absolute;
+    top: calc(100vh - 60px);
+  }
+}
+@keyframes moveYart {
+  from {
+    position: absolute;
+    top: 0;
+  }
+  to {
+    position: absolute;
+    top: calc(100vh - 60px);
+  }
+}
+@-webkit-keyframes rotate {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+@keyframes rotate {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes turn {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+    -webkit-transform: scaleX(-1);
+            transform: scaleX(-1);
+  }
+  50% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+    -webkit-transform: scaleX(-1);
+            transform: scaleX(-1);
+  }
+}
+@keyframes turn {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+    -webkit-transform: scaleX(-1);
+            transform: scaleX(-1);
+  }
+  50% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+    -webkit-transform: scaleX(-1);
+            transform: scaleX(-1);
   }
 }
