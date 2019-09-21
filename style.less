@@ -28,6 +28,7 @@ html {
   cursor: url(assets/brauni-cursor.png), auto;
 }
 body {
+  position: relative;
   overflow: hidden;
   background: @blue url(assets/brauni.png);
   background-size: 50px;
@@ -55,6 +56,7 @@ h2 {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: all .2s ease-in-out;
   margin: 0 5px;
   width: 150px;
   height: 130px;
@@ -66,6 +68,14 @@ h2 {
   font-weight: 100;
   //text-shadow: @text-shadow;
   animation: moveXart 5.05s linear 0s infinite alternate, moveYart 5.4s linear 0s infinite alternate; //,turn 2s linear infinite;
+  &.open {
+    width: 100%;
+    height: 90vh;
+    top: 0;
+    left: 0;
+    position: absolute;
+    animation-play-state: paused;
+  }
   &:nth-last-of-type(1) {
     animation-delay: 1s;
   }
@@ -83,7 +93,11 @@ h2 {
   &:nth-last-of-type(5) {
     animation-delay: 5s;
   }
+  &:nth-last-of-type(6) {
+    animation-delay: 5s;
+  }
   &:hover {
+    transform: scale(1.5);
     animation-play-state: paused;
   }
 }

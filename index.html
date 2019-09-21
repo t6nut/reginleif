@@ -17,7 +17,7 @@
     <span>R</span><span>e</span><span>g</span><span>i</span><span>n</span><span>l</span><span>e</span><span>i</span><span>f</span>
     <span>P</span><span>e</span><span>г</span><span>и</span><span>н</span><span>л</span><span>e</span><span>и</span><span>ф</span>-->
     <div class="categories">
-      <h2><span>A</span>rt</h2>
+      <h2 id="content"><span>A</span>rt</h2>
       <h2><span>P</span>hoto</h2>
       <h2><span>P</span>oetry</h2>
       <h2><span>F</span>ilm</h2>
@@ -25,14 +25,31 @@
       <h2><span>M</span>usic</h2>
     </div>
   </div>
-  <script>
-    const instance = new TypeIt('h1', {
-      strings: ['Reginleif', 'Peгинлeиф'],
-      speed: 250,
-      loop: true,
-      breakLines: false,
-      waitUntilVisible: true
-    }).go();
-  </script>
 </body>
+<script>
+  document.querySelector('#content').addEventListener("click", openContent);
+
+  function openContent() {
+    this.classList.add('open');
+  }
+  const instance = new TypeIt('h1', {
+    speed: 250,
+    loop: true,
+    breakLines: false,
+    waitUntilVisible: true
+  })
+  .type('Reginleif')
+  .pause(750)
+  .delete(3)
+  .type('ife')
+  .pause(750)
+  .delete()
+  .pause(750)
+  .type('Регинлейф')
+  .pause(750)
+  .delete(3)
+  .type('йфe')
+  .pause(750)
+  .go();
+</script>
 </html>
