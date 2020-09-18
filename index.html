@@ -88,4 +88,30 @@ test.addEventListener("mouseover", function( event ) {
 }, false);
   </script>
 </body>
+<script>
+  document.querySelector('#content').addEventListener("click", openContent);
+
+  function openContent() {
+    this.classList.add('open');
+  }
+  const instance = new TypeIt('h1', {
+    speed: 250,
+    loop: true,
+    breakLines: false,
+    waitUntilVisible: true
+  })
+  .type('Reginleif')
+  .pause(750)
+  .delete(3)
+  .type('ife')
+  .pause(750)
+  .delete()
+  .pause(750)
+  .type('Регинлейф')
+  .pause(750)
+  .delete(3)
+  .type('йфe')
+  .pause(750)
+  .go();
+</script>
 </html>
