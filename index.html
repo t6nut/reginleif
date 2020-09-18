@@ -7,22 +7,40 @@
   <link rel="shortcut icon" type="image/png" href="assets/favicon.png"/>
   <link rel="stylesheet" href="style.css?v=1">
   <script src="https://cdn.jsdelivr.net/npm/typeit@6.0.2/dist/typeit.min.js"></script>
-  <title>Reginleif</title>
+  <title>Reginleif | Peгинлeиф | Trubetsky - ARtist</title>
 </head>
 <body>
+  <img class="pink-gif" src="assets/pinkgif.gif" alt="">
   <div class="star">
     <!--<img class="brauni" src="assets/brauni.png" alt="brauni">-->
     <h1></h1>
     <!--<span>R</span>eginleif
     <span>R</span><span>e</span><span>g</span><span>i</span><span>n</span><span>l</span><span>e</span><span>i</span><span>f</span>
     <span>P</span><span>e</span><span>г</span><span>и</span><span>н</span><span>л</span><span>e</span><span>и</span><span>ф</span>-->
-    <div class="categories">
-      <h2><span>A</span>rt</h2>
-      <h2><span>P</span>hoto</h2>
-      <h2><span>P</span>oetry</h2>
-      <h2><span>F</span>ilm</h2>
-      <h2><span>D</span>esign</h2>
-      <h2><span>M</span>usic</h2>
+    <audio id="pinkpanther">
+    	<source src="assets/pinktheme.mp3"></source>
+    	<source src="assets/pinktheme.ogg"></source>
+    	Your browser isn't invited for super fun audio time.
+    </audio>
+    <div id="cats" class="categories">
+      <h2>
+        <a href="mailto:reginleif.trubetsky@gmail.com?subject=Art" target="_blank"><span>A</span>rt</a>
+      </h2>
+      <h2>
+        <a href="https://www.facebook.com/regineiftrubetsky" target="_blank"><span>P</span>hoto</a>
+      </h2>
+      <h2>
+        <a href="mailto:reginleif.trubetsky@gmail.com?subject=Poetry" target="_blank"><span>P</span>oetry</a>
+      </h2>
+      <h2>
+        <a href="https://www.facebook.com/ReginleifTrubetskyActress" target="_blank"><span>F</span>ilm</a>
+      </h2>
+      <h2>
+        <a href="mailto:reginleif.trubetsky@gmail.com?subject=Design" target="_blank"><span>D</span>esign</a>
+      </h2>
+      <h2>
+        <a href="https://www.youtube.com/user/rreginleif" target="_blank"><span>M</span>usic</a>
+      </h2>
     </div>
   </div>
   <script>
@@ -33,6 +51,41 @@
       breakLines: false,
       waitUntilVisible: true
     }).go();
+    let test = document.getElementById("cats");
+
+// This handler will be executed only once when the cursor
+// moves over the unordered list
+var audio = document.getElementById("pinkpanther");
+var pinky = document.querySelector(".pink-gif");
+test.addEventListener("click", function (event){
+  audio.paused ? audio.play() : audio.pause();
+  if (audio.duration > 0 && !audio.paused) {
+    pinky.style.opacity = "1";
+    pinky.classList.add("move");
+  } else {
+    pinky.style.opacity = "0";
+    pinky.classList.remove("move");
+  }
+});
+test.addEventListener("mouseenter", function( event ) {
+  // highlight the mouseenter target
+  event.target.style.color = "#FF6EC7";
+  // reset the color after a short delay
+  setTimeout(function() {
+    event.target.style.color = "";
+  }, 500);
+}, false);
+
+// This handler will be executed every time the cursor
+// is moved over a different list item
+test.addEventListener("mouseover", function( event ) {
+  // highlight the mouseover target
+  event.target.style.color = "#001AFF";
+  // reset the color after a short delay
+  setTimeout(function() {
+    event.target.style.color = "";
+  }, 500);
+}, false);
   </script>
 </body>
 </html>
